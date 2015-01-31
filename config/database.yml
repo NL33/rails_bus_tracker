@@ -1,0 +1,7 @@
+development:   
+  adapter: postgresql   
+  database: rails_bus_timetable_development    
+
+test:
+  adapter: postgresql   
+  database: rails_bus_timetable_test

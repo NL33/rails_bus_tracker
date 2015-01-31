@@ -1,0 +1,20 @@
+<%= content_for(:title, "Travel Tracker") %>
+
+<h1>Travel Tracker</h1>
+</br>
+<ul>
+  <% @stations.each do |station| %>
+    <h4>Station: <%= link_to station.name, station_path(station) %></h4>
+    <p> Lines that Run Through This Station </p>
+     <% station.lines.each do |line| %>
+         <p>&nbsp&nbsp&nbsp<%= link_to line.name, line_path(line) %></p>
+     <% end %> </br>
+  <% end %>
+</ul>
+<%= link_to "See All Lines", lines_path, :class => "btn btn-default" %>
+<%= link_to "See All Stops", stops_path, :class => "btn btn-default" %></br>
+</br>
+<%= link_to "Add New Station", new_station_path, :class => "btn btn-default" %></br></br>
+<%= link_to "Add New Line", new_line_path, :class => "btn btn-default" %></br></br>
+<%= link_to "Add New Stop (Combine a Line and a Station)", new_stop_path, :class => "btn btn-default" %>
+

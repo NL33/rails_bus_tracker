@@ -1,0 +1,13 @@
+<%= render("layouts/errors", :object => @line) %>
+
+<%= form_for(@line) do |f| %>
+  <div class="form-group">
+    <%= f.label :name %> 
+    <%= f.text_field :name %>
+  </div>
+  <div class="form-group">
+    <%= f.collection_check_boxes :station_ids, Station.all, :id, :name %>
+  </div>
+  
+  <%= f.submit(:class => "btn btn-primary") %>
+<% end %>

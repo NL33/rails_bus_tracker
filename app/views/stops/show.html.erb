@@ -1,0 +1,24 @@
+<%= content_for(:title, "#{@stop.name} | Travel Tracker") %>
+
+<h1><%= @stop.name %></h1>
+
+<h3><%= "Line: #{@line.name}" %></h3>
+
+<h3><%= "Stop: #{@station.name}" %></h3>
+
+</br>
+</br>
+</br>
+
+
+
+<p><%= link_to "Edit", edit_stop_path(@stop), :class => "btn btn-default" %></p>
+<p><%= link_to "Delete", stop_path(@stop), :data => {
+                         :confirm => "You sure?",
+                         :method => "delete"},
+                         :class => "btn btn-danger" %></p>                
+<p><%= link_to "Return to the stop listing", stops_path %></p>
+
+</br>
+<%= link_to "Return to Home Page", stations_path, :class => "btn btn-default" %></br>
+</br>

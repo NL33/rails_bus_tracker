@@ -1,0 +1,15 @@
+<%= content_for(:title, "Stops | Travel Tracker") %>
+
+<h1>Stops</h1>
+
+<ul>
+  <% @stops.each do |stop| %>
+    <li><%= link_to "Line / Station: #{stop.line.name} stopping at #{stop.station.name}", stop_path(stop) %></li>
+  <% end %>
+</ul>
+
+<%= link_to "New Stop", new_stop_path, :class => "btn btn-default" %>
+
+</br>
+<%= link_to "Return to Home Page", stations_path, :class => "btn btn-default" %></br>
+</br>

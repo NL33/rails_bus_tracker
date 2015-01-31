@@ -1,0 +1,16 @@
+<%= content_for(:title, "Lines") %>
+
+<h1>Lines</h1>
+
+<ul>
+  <% @lines.each do |line| %>
+    <li><%= link_to line.name, line_path(line) %></li>
+  <% end %>
+</ul>
+
+<%= link_to "New Line", new_line_path, :class => "btn btn-default" %>
+
+</br>
+</br>
+<%= link_to "Return to Home Page", stations_path, :class => "btn btn-default" %></br>
+</br>

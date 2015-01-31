@@ -1,0 +1,26 @@
+<%= content_for(:title, "#{@station.name} | Travel Tracker") %>
+
+<h1><%= @station.name %></h1>
+
+<h3> The following lines stop here: </h3>
+
+<% @station.lines.each do |line| %>
+         <h4>&nbsp&nbsp&nbsp<%= link_to line.name, line_path(line) %></h4>
+ <% end %> 
+
+
+</br>
+</br>
+
+
+<p><%= link_to "Edit", edit_line_path(@station), :class => "btn btn-default" %></p>
+<p><%= link_to "Delete", line_path(@station), :data => {
+                         :confirm => "You sure?",
+                         :method => "delete"},
+                         :class => "btn btn-danger" %></p>                
+<p><%= link_to "Return to the station listing", stations_path %></p>
+
+</br>
+</br>
+<%= link_to "Return to Home Page", stations_path, :class => "btn btn-default" %></br>
+</br>
